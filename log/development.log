@@ -1,0 +1,483 @@
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-11-04 12:43:20) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed in 110ms (View: 16, DB: 0) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (15.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTasks (20091104174721)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "finished" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091104174721')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tasks")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "finished" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091104174721')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTasks (20091104174721)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:11:42) [GET]
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+
+ActionView::TemplateError (undefined method `each' for #<Task:0x47e1900>) on line #19 of app/views/tasks/index.rhtml:
+16:   <tr>
+17:     <p><b>Task</b></p>
+18:   </tr>
+19:   <% @task.each do |task| %>
+20:     <tr>
+21:       <td width="500"><%=h task.name %></td>
+22:       <% if task.finished %>
+
+    app/views/tasks/index.rhtml:19:in `_run_rhtml_app47views47tasks47index46rhtml'
+    C:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (187.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:14:43) [GET]
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 32ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:14:52) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"YFwf4qkIrSpUUMO/6l2QwTH9eB1ymM7vq929ttPxoI0=", "task"=>{"name"=>"first task"}}
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:15:02) [GET]
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 31ms (View: 0, DB: 0) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:16:14) [GET]
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:16:31) [GET]
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 78ms (View: 78, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:46:58) [GET]
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 188ms (View: 141, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:47:03) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"x25ZmSLcFjgwYy53FDV4pIVQgR71fKfpQoijRAXQt9E=", "task"=>{"name"=>"task 1"}}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 15ms (View: 0, DB: 0) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:47:07) [GET]
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 15ms (View: 0, DB: 0) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:47:12) [GET]
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:47:43) [GET]
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:47:48) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uI8XJrmTNPce7Lymgzyon/ujr2Nsv0tr/2QCD3ddRDA=", "task"=>{"name"=>"task 1"}}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 15ms (View: 0, DB: 0) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:47:53) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uI8XJrmTNPce7Lymgzyon/ujr2Nsv0tr/2QCD3ddRDA=", "task"=>{"name"=>"task 1"}}
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:47:55) [GET]
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:47:58) [GET]
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:51:58) [GET]
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 328ms (View: 281, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:52:02) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"FFhY8Tp47eZROc3QtE27TaegGtZnsR03HtQL81xi+Is=", "task"=>{"name"=>"task 1"}}
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:52:08) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"FFhY8Tp47eZROc3QtE27TaegGtZnsR03HtQL81xi+Is=", "task"=>{"name"=>"task 1"}}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:52:12) [GET]
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-04 13:52:14) [GET]
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://localhost/tasks]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 15:37:45) [GET]
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 2171ms (View: 2156, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:24:42) [GET]
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 2563ms (View: 2532, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:24:49) [GET]
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 46ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:25:29) [GET]
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 62ms (View: 62, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:25:31) [GET]
+  Parameters: {"locale"=>"myes"}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 204ms (View: 188, DB: 0) | 200 OK [http://localhost/?locale=myes]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:25:35) [GET]
+  Parameters: {"locale"=>"myes"}
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/?locale=myes]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:25:36) [GET]
+  Parameters: {"locale"=>"en-US"}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 47ms (View: 15, DB: 0) | 200 OK [http://localhost/?locale=en-US]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:25:38) [GET]
+  Parameters: {"locale"=>"myes"}
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/?locale=myes]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:25:41) [GET]
+  Parameters: {"locale"=>"myes"}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/?locale=myes]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:33:22) [GET]
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 1922ms (View: 1922, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:33:26) [GET]
+  Parameters: {"locale"=>"myes"}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 32ms (View: 16, DB: 0) | 200 OK [http://localhost/?locale=myes]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:33:28) [GET]
+  Parameters: {"locale"=>"en-US"}
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 62ms (View: 47, DB: 0) | 200 OK [http://localhost/?locale=en-US]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:33:29) [GET]
+  Parameters: {"locale"=>"myes"}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 32ms (View: 16, DB: 0) | 200 OK [http://localhost/?locale=myes]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:33:31) [GET]
+  Parameters: {"locale"=>"en-US"}
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 47ms (View: 32, DB: 0) | 200 OK [http://localhost/?locale=en-US]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:33:33) [GET]
+  Parameters: {"locale"=>"myes"}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://localhost/?locale=myes]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:36:27) [GET]
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 1906ms (View: 1891, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:36:32) [GET]
+  Parameters: {"locale"=>"myes"}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/?locale=myes]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:36:35) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 63ms (View: 47, DB: 0) | 200 OK [http://localhost/?locale=en]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:36:36) [GET]
+  Parameters: {"locale"=>"myes"}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/?locale=myes]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:36:38) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 62ms (View: 47, DB: 0) | 200 OK [http://localhost/?locale=en]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:36:39) [GET]
+  Parameters: {"locale"=>"myes"}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/?locale=myes]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:37:30) [GET]
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 1906ms (View: 1906, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:37:34) [GET]
+  Parameters: {"locale"=>"myes"}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://localhost/?locale=myes]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:37:36) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 62ms (View: 47, DB: 0) | 200 OK [http://localhost/?locale=en]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:37:38) [GET]
+  Parameters: {"locale"=>"myes"}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/?locale=myes]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:37:40) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/?locale=en]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:38:30) [GET]
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 1875ms (View: 1860, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:38:34) [GET]
+  Parameters: {"locale"=>"myes"}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/?locale=myes]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:38:36) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 62ms (View: 47, DB: 0) | 200 OK [http://localhost/?locale=en]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:38:38) [GET]
+  Parameters: {"locale"=>"myes"}
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://localhost/?locale=myes]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2009-11-05 23:38:39) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;36;1mTask Load (0.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/?locale=en]

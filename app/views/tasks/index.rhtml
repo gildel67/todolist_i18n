@@ -1,0 +1,44 @@
+<h1><%=t :task_title %></h1>
+
+<% form_for @task do |f| -%>
+  <% f.error_messages %>
+
+  <p>
+    <%= f.text_field :name %>
+    <%= f.submit "Create" %>
+  </p>
+
+<% end -%>
+
+<%= link_to 'en', root_path(:locale => 'en') %> or
+<%= link_to 'myes', root_path(:locale => 'myes') %>
+
+<hr />
+<table>
+  <tr>
+    <p><b>Task</b></p>
+  </tr>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td width="500"><%=h task.name %></td>
+      <% if task.finished %>
+        <td><%= image_tag("green.png", :size => "20x20") %></td>
+      <% else %>
+        <td><%= image_tag("red.png") %></td>
+
+      <% end %>
+      <td>
+        <%= if task.finished
+          link_to 'unmark_finished', :controller => "tasks",
+            :action => "unfinish", :id => task.id
+        else
+          link_to 'mark_finished', :controller => "tasks",
+            :action => "finish", :id => task.id
+        end %>
+      </td>
+      <td>| <%=   link_to 'delete', task, :confirm => 'Are you sure?',
+          :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>

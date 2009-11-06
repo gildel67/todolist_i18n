@@ -1,0 +1,5 @@
+## YAML Template.
+myes:
+    task_title: "Tareas"
+    hello_flash: "Hola, flash"
+
